@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61", "setuptools_scm[toml]>=6.2", "pybind11>=2.8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eigh23"
+description = ""
+readme = "README.rst"
+authors = [{name = "Antony Lee"}]
+urls = {}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.8"
+dependencies = [
+]
+dynamic = ["version"]
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "node-and-date"
+fallback_version = "0+unknown"
+
+[tool.coverage.run]
+branch = true
+source_pkgs = ["eigh23"]
+
+[tool.coverage.paths]
+source = ["src/", "/**/python*/site-packages/"]
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning",
+    "error::DeprecationWarning:eigh23",
+]
+required_plugins = [
+    "pytest-benchmark",
+]
