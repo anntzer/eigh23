@@ -3,6 +3,7 @@
 
 namespace py = pybind11;
 using namespace pybind11::literals;
+using ssize_t = Py_ssize_t;
 
 // Formulas and notations from SelfAdjointEigenSolver.h's direct_selfadjoint_eigenvalues.
 
